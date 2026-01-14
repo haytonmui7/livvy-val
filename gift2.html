@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Penguin Surprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(135deg, #c7e9ff 0%, #ffe3f6 50%, #ffb3d9 100%);
+            min-height: 100vh;
+            position: relative;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .title {
+            text-align: center;
+            color: #d81b60;
+            font-size: 2.5em;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .bouquet-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            position: relative;
+            z-index: 2;
+        }
+
+        .bouquet-image {
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            z-index: 2;
+        }
+
+        .bubble {
+            position: absolute;
+            background-color: #fff3ff;
+            padding: 15px 20px;
+            border-radius: 20px;
+            color: #333;
+            font-size: 1.1em;
+            max-width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 3;
+        }
+
+        .bubble::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .bubble-left {
+            left: 50%;
+            top: 20%;
+            transform: translateX(calc(-50% - 380px));
+        }
+
+        .bubble-left::before {
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 10px 15px 10px 0;
+            border-color: transparent #fff3ff transparent transparent;
+        }
+
+        .bubble-bottom-left {
+            left: 50%;
+            bottom: 25%;
+            transform: translateX(calc(-50% - 350px));
+        }
+
+        .bubble-bottom-left::before {
+            left: 30px;
+            bottom: -15px;
+            border-width: 15px 10px 0 10px;
+            border-color: #fff3ff transparent transparent transparent;
+        }
+
+        .bubble-right-top {
+            right: 50%;
+            top: 15%;
+            transform: translateX(calc(50% + 380px));
+        }
+
+        .bubble-right-top::before {
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #fff3ff;
+        }
+
+        .bubble-right-bottom {
+            right: 50%;
+            bottom: 20%;
+            transform: translateX(calc(50% + 380px));
+        }
+
+        .bubble-right-bottom::before {
+            right: -15px;
+            bottom: 30px;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #fff3ff;
+        }
+
+        .hearts-decoration {
+            position: absolute;
+            font-size: 1.5em;
+            color: #d81b60;
+            z-index: 1;
+        }
+
+        .hearts-left-bottom {
+            left: 50%;
+            bottom: 15%;
+            transform: translateX(calc(-50% - 410px));
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            max-width: 100px;
+        }
+
+        .hearts-right-top {
+            right: 50%;
+            top: 25%;
+            transform: translateX(calc(50% + 410px));
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            max-width: 100px;
+        }
+
+        .heart-container {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 9;
+        }
+
+        .heart-container a {
+            text-decoration: none;
+            display: block;
+            position: relative;
+        }
+
+        .heart-image {
+            width: 300px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .click-me-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            border: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Fredoka', sans-serif;
+            transition: all 0.3s ease;
+            z-index: 10;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .heart-container:hover .heart-image {
+            transform: scale(1.1);
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+        }
+
+        @media (max-width: 768px) {
+            .bubble {
+                font-size: 0.9em;
+                max-width: 200px;
+                padding: 12px 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .bouquet-image {
+                max-width: 300px;
+            }
+
+            .bubble-left {
+                left: 5%;
+                top: 15%;
+            }
+
+            .bubble-right-top {
+                right: 5%;
+                top: 10%;
+            }
+
+            .bubble-right-bottom {
+                right: 5%;
+                bottom: 15%;
+            }
+
+            .bubble-bottom-left {
+                left: 5%;
+                bottom: 20%;
+            }
+
+            .heart-image {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Your Penguin Surprise</h1>
+    
+    <div class="bouquet-container">
+        <img src="images/pngtree-cute-kissing-little-penguins-for-valentines-day-png-image_4103757-removebg-preview.png" alt="Penguin Hug" class="bouquet-image">
+
+        <!-- Text bubbles -->
+        <div class="bubble bubble-left">
+            You make every chilly day feel warm and bright
+        </div>
+
+        <div class="bubble bubble-bottom-left">
+            With you, I'm always home
+        </div>
+
+        <div class="bubble bubble-right-top">
+            Our love waddles on forever
+        </div>
+
+        <div class="bubble bubble-right-bottom">
+            You're my cutest adventure
+        </div>
+
+        <!-- Hearts decorations -->
+        <div class="hearts-decoration hearts-left-bottom">
+            ❤️ ❤️ ❤️<br>❤️ ❤️
+        </div>
+
+        <div class="hearts-decoration hearts-right-top">
+            ❤️ ❤️<br>❤️ ❤️ ❤️
+        </div>
+    </div>
+
+    <div class="heart-container">
+        <a href="message.html">
+            <img src="images/simple-hand-drawn-heart-illustration-cute-valentine-s-day-heart-doodle_645998-108-removebg-preview.png" alt="Heart" class="heart-image">
+            <button class="click-me-btn">click me</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -64,6 +64,14 @@
             z-index: 2;
         }
 
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
         h1 {
             color: red;
             font-family: 'Fredoka', sans-serif;
@@ -107,7 +115,11 @@
     <div class="container">
         <h1>Yay, you said Yes!</h1>
         <h2>I made a gift for you.</h2>
-        <a href="gift.html" class="btn">Open your Gift!</a>
+        <div class="button-row">
+            <a href="gift.html" class="btn">Gift 1</a>
+            <a href="gift2.html" class="btn">Gift 2</a>
+            <a href="gift3.html" class="btn">Gift 3</a>
+        </div>
     </div>
 </body>
 </html>
