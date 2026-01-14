@@ -25,6 +25,16 @@
             position: relative;
         }
 
+        .fullscreen-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
         .hearts-left {
             position: fixed;
             left: 0;
@@ -33,7 +43,7 @@
             height: 85vh;
             width: auto;
             max-width: 25%;
-            z-index: 1;
+            z-index: 2;
             object-fit: contain;
             object-position: left center;
         }
@@ -45,7 +55,7 @@
             max-width: 200px;
             width: auto;
             height: auto;
-            z-index: 1;
+            z-index: 2;
         }
 
         .mailbox-right {
@@ -55,13 +65,13 @@
             max-width: 350px;
             width: auto;
             height: auto;
-            z-index: 1;
+            z-index: 2;
         }
 
         .container {
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         .button-row {
@@ -109,6 +119,7 @@
     </style>
 </head>
 <body>
+    <img src="https://i4.glitter-graphics.org/pub/729/729484t823ffqbd9.gif" alt="Full screen background" class="fullscreen-gif">
     <img src="images/pngtree-hanging-heart-png-png-image_6651058-removebg-preview.png" alt="Hanging hearts" class="hearts-left">
     <img src="images/png-clipart-valentine-s-day-google-doodle-marriage-proposal-computer-icons-hand-painted-strawberry-love-watercolor-painting-removebg-preview.png" alt="Strawberry" class="strawberry-right">
     <img src="images/Valentine-Kawaii-Mailbox-Pink-Fill-Line-Graphics-8420548-1-1-580x387.png" alt="Mailbox" class="mailbox-right">

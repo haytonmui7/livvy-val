@@ -23,6 +23,16 @@
             overflow-x: hidden;
         }
 
+        .fullscreen-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
         .title {
             text-align: center;
             color: #d81b60;
@@ -30,6 +40,8 @@
             margin-top: 20px;
             margin-bottom: 30px;
             font-weight: 600;
+            position: relative;
+            z-index: 2;
         }
 
         .bouquet-container {
@@ -236,6 +248,7 @@
     </style>
 </head>
 <body>
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyYmY2NWlkM2JoemM4aWc2bXR2cDdkOHJsZWo5YTl0enlvNnY5ZGRwbyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/26BRyql7J3iOx875u/200.gif" alt="Full screen background" class="fullscreen-gif">
     <h1 class="title">Your Penguin Surprise</h1>
     
     <div class="bouquet-container">
