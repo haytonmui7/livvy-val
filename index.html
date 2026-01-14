@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Valentine?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffb3d9 0%, #ff99cc 50%, #ff80b3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hearts-left {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 85vh;
+            width: auto;
+            max-width: 25%;
+            z-index: 1;
+            object-fit: contain;
+            object-position: left center;
+        }
+
+        .calendar-right {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            max-width: 200px;
+            width: auto;
+            height: auto;
+            z-index: 1;
+        }
+
+        .paper-plane-right {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            max-width: 350px;
+            width: auto;
+            height: auto;
+            z-index: 1;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .penguin-image {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            color: red;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: red;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            min-width: 150px;
+        }
+
+        .btn-yes {
+            background-color: #ff1493;
+            color: white;
+        }
+
+        .btn-yes:hover {
+            background-color: #ff0066;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        .btn-no {
+            background-color: white;
+            color: #ff1493;
+        }
+
+        .btn-no:hover {
+            background-color: #ffe6f2;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <img src="images/pngtree-hanging-heart-png-png-image_6651058-removebg-preview.png" alt="Hanging hearts" class="hearts-left">
+    <img src="images/hand-drawing-clipart-14-feb-calendar-icon-701751694973910ds70zl0u9u-removebg-preview.png" alt="February 14 calendar" class="calendar-right">
+    <img src="images/pngtree-paper-plane-fly-in-the-shape-of-a-heart-on-day-png-image_5738362-removebg-preview.png" alt="Paper plane with heart" class="paper-plane-right">
+    <div class="container">
+        <img src="images/pngtree-cute-kissing-little-penguins-for-valentines-day-png-image_4103757-removebg-preview.png" alt="Kissing penguins" class="penguin-image">
+        <h1>Hey Baby,</h1>
+        <h2>Will you be my Valentine?</h2>
+        <div class="buttons">
+            <a href="yes.html" class="btn btn-yes">Yes, Of Course!</a>
+            <a href="no.html" class="btn btn-no">NO!</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
